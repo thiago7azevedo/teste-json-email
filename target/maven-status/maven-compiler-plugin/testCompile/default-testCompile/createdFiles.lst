@@ -1,4 +1,5 @@
 email/SendMail.class
-program/Teste.class
+program/App.class
+program/Main.class
 email/Config.class
 email/SendMail$1.class
