@@ -66,7 +66,7 @@ Depois disso, com a importação das bibliotecas nativas do [JAVA para email (ja
 - Com o comando`crontab -e` é aberto um editor para que seja configurado a tarefa que será executada periodicamente, conforme necessidade.
 
 ```
-*/5 * * * * /home/thiago/nexxera.sh
+*/5 * * * * /home/thiago/alerta.sh
 ```
 
 ![crontab](https://user-images.githubusercontent.com/53309633/86081486-e38a9a80-ba6b-11ea-918e-77fb147cc6e1.png)
