@@ -12,6 +12,8 @@
 * [Imagens](#Imagens)
 * [Observações](#Observações)
 * [Contato](#Contato)
+* [Automatização](#Automatização)
+
 
 ## Objetivo
 
@@ -50,8 +52,39 @@ Depois disso, com a importação das bibliotecas nativas do [JAVA para email (ja
   
 ## Observações
 
-  O aplicativo é relativamente simples. O foco é mostrar desde a ideia inicial, com a infraestrutura necessária até o executavel final. 
+  - Para testes em seu localhost, é necessário modificar o arquivo config.properties com dados de login de email e destinatario.
+  - O aplicativo é relativamente simples. O foco é mostrar desde a ideia inicial, com a infraestrutura necessária até o executavel final. 
   
+
+# Automatização
+
+> Podemos automatizar o programa para que seja executado no tempo que for necessário e onde estiver. Basta configurarmos o arquivo config.properties conforme orientado acima e extrairmos o executavel via IDE pelo maven.
+
+### CRON do Linux
+
+- Utilizo o agendador de tarfeas CRON do linux.
+- Com o comando`crontab -e` é aberto um editor para que seja configurado a tarefa que será executada periodicamente, conforme necessidade.
+
+```
+*/5 * * * * /home/thiago/nexxera.sh
+```
+
+![crontab](https://user-images.githubusercontent.com/53309633/86081486-e38a9a80-ba6b-11ea-918e-77fb147cc6e1.png)
+
+ Este comando ativa o agendador para execução do script .sh em BASH a cada 5 minutos.
+ 
+ - O Script em BASH contém a seguinte configuração:
+ ```
+/usr/lib/jvm/java-8-openjdk-amd64/bin/java -jar ~/home/thiago/teste-json-email/out/artifacts/selenium_json_email_jar/selenium-json-email.jar > /home/thiago/teste.txt
+
+ ```
+  ![bash](https://user-images.githubusercontent.com/53309633/86081483-e2596d80-ba6b-11ea-9119-35cc1fdd763a.png)
+ 
+ O arquivo .jar que foi gerado pelo programa, está na pasta correta e pronto para ser chamado pelo comando java -jar.
+ 
+ - Para monitoramento básico do processo automático, é gerado um arquivo teste.txt na home.
+
+ 
 ## Contatos
 
 [GitHub - @thiago7azevedo](https://github.com/thiago7azevedo) - [Docker HUB - thiago7sc](https://hub.docker.com/u/thiago7sc) - [Email @thiago7azevedo@gmail.com](www.gmail.com)
