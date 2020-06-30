@@ -24,18 +24,22 @@ public class Config {
 
         try {
 
+            input = new FileInputStream("/tmp/config.properties");
+
+            prop.load(input);
+
             System.out.println("————————————–————————————–————————————–—————————————–");
             System.out.println("Email");
 
-            mail_smtp_host = "smtp.gmail.com";
-            mail_smtp_socketFactory_port = "465";
-            mail_smtp_socketFactory_class = "javax.net.ssl.SSLSocketFactory";
-            mail_smtp_auth = "true";
-            mail_smtp_port = "465";
-            mail_userAuthentication = "thiago.sc.devops@gmail.com";
-            mail_passwordAuthentication = "Nexxera2020";
-            mail_sender = "thiago.sc.devops@gmail.com";
-            mail_to_user = "thiago.sc@outlook.com";
+            mail_smtp_host = prop.getProperty("mail_smtp_host");
+            mail_smtp_socketFactory_port = prop.getProperty("mail_smtp_socketFactory_port");
+            mail_smtp_socketFactory_class = prop.getProperty("mail_smtp_socketFactory_class");
+            mail_smtp_auth = prop.getProperty("mail_smtp_auth");
+            mail_smtp_port = prop.getProperty("mail_smtp_port");
+            mail_userAuthentication = prop.getProperty("mail_userAuthentication");
+            mail_passwordAuthentication = prop.getProperty("mail_passwordAuthentication");
+            mail_sender = prop.getProperty("mail_sender");
+            mail_to_user = prop.getProperty("mail_to_user");
 
             System.out.println(mail_smtp_host);
             System.out.println(mail_smtp_socketFactory_port);
